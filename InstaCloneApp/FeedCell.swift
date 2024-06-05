@@ -26,5 +26,8 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func likeClicked(_ sender: Any) {
+        
+        
+        
     }
 }

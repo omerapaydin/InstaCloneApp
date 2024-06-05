@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import SDWebImage
+import SDWebImageMapKit
 
 class FeedViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
 
@@ -16,7 +18,7 @@ class FeedViewController: UIViewController ,UITableViewDelegate, UITableViewData
     var userCommentArray = [String]()
     var likeArray = [Int]()
     var userImageArray = [String]()
-    
+    var documentIdArray = [String]()
     
     
     
@@ -37,7 +39,7 @@ class FeedViewController: UIViewController ,UITableViewDelegate, UITableViewData
         
         let fireStoreDatabase = Firestore.firestore()
         
-        fireStoreDatabase.collection("Posts").addSnapshotListener { (snapshot, error) in
+        fireStoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot, error) in
             
             if error != nil {
                 print(error?.localizedDescription)
@@ -45,8 +47,16 @@ class FeedViewController: UIViewController ,UITableViewDelegate, UITableViewData
                 
                 if snapshot?.isEmpty != true && snapshot != nil {
                     
+                    
+                    self.userImageArray.removeAll(keepingCapacity: false)
+                    self.userEmailArray.removeAll(keepingCapacity: false)
+                    self.userCommentArray.removeAll(keepingCapacity: false)
+                    self.likeArray.removeAll(keepingCapacity: false)
+                    self.documentIdArray.removeAll(keepingCapacity: false)
+                    
                     for document in snapshot!.documents {
                         let documentID = document.documentID
+                        self.documentIdArray.append(documentID)
                         
                         if let posteBy = document.get("posteBy") as? String{
                             self.userEmailArray.append(posteBy)
@@ -85,7 +95,7 @@ class FeedViewController: UIViewController ,UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
         cell.commentLabel.text = userCommentArray[indexPath.row]
-        cell.imageVieww.image = UIImage(named: "select")
+        cell.imageVieww.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
         cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.userEmailLabel.text = userEmailArray[indexPath.row]
         return cell
