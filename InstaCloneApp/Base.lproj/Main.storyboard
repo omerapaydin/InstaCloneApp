@@ -211,7 +211,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="useremail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpR-he-0L9">
-                                                    <rect key="frame" x="34" y="11" width="324" height="38"/>
+                                                    <rect key="frame" x="34.666666666666657" y="11" width="324" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="Ga4-dx-rYz"/>
                                                     </constraints>
@@ -220,7 +220,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-eK-HsY">
-                                                    <rect key="frame" x="34" y="374" width="324" height="43"/>
+                                                    <rect key="frame" x="34.666666666666657" y="374" width="324" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyC-W5-qhT">
-                                                    <rect key="frame" x="298" y="425" width="60" height="36"/>
+                                                    <rect key="frame" x="298.66666666666669" y="425" width="60" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="3Z5-Kn-swk"/>
                                                         <constraint firstAttribute="height" constant="36" id="uEW-qb-XIL"/>
@@ -246,18 +246,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQT-go-dk0">
+                                                    <rect key="frame" x="316" y="20" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NpR-he-0L9" firstAttribute="leading" secondItem="vdq-Ss-alo" secondAttribute="leading" id="6du-ah-CYt"/>
                                                 <constraint firstItem="NpR-he-0L9" firstAttribute="trailing" secondItem="vdq-Ss-alo" secondAttribute="trailing" id="Fcs-AG-yan"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mQT-go-dk0" secondAttribute="trailing" constant="15" id="Jus-uH-Dyz"/>
                                                 <constraint firstItem="vdq-Ss-alo" firstAttribute="leading" secondItem="cIr-eK-HsY" secondAttribute="leading" id="KhB-S1-l3A"/>
                                                 <constraint firstItem="NpR-he-0L9" firstAttribute="top" secondItem="SPN-eI-IPU" secondAttribute="topMargin" id="Uhl-l9-p5l"/>
                                                 <constraint firstItem="H8n-om-jdv" firstAttribute="bottom" secondItem="SPN-eI-IPU" secondAttribute="bottomMargin" id="WNw-XH-8pu"/>
                                                 <constraint firstItem="H8n-om-jdv" firstAttribute="top" secondItem="cIr-eK-HsY" secondAttribute="bottom" constant="6" id="YCi-Z9-PvL"/>
                                                 <constraint firstItem="lyC-W5-qhT" firstAttribute="top" secondItem="cIr-eK-HsY" secondAttribute="bottom" constant="8" symbolic="YES" id="bFl-dy-TP0"/>
                                                 <constraint firstItem="cIr-eK-HsY" firstAttribute="top" secondItem="vdq-Ss-alo" secondAttribute="bottom" constant="8" symbolic="YES" id="bN9-zj-jpt"/>
+                                                <constraint firstItem="NpR-he-0L9" firstAttribute="centerY" secondItem="mQT-go-dk0" secondAttribute="centerY" id="caA-Wb-KNV"/>
                                                 <constraint firstItem="NpR-he-0L9" firstAttribute="centerX" secondItem="SPN-eI-IPU" secondAttribute="centerX" id="itS-G1-Ogg"/>
                                                 <constraint firstItem="vdq-Ss-alo" firstAttribute="trailing" secondItem="cIr-eK-HsY" secondAttribute="trailing" id="kAN-AK-a3G"/>
+                                                <constraint firstItem="vdq-Ss-alo" firstAttribute="top" secondItem="mQT-go-dk0" secondAttribute="bottom" constant="16" id="rOr-8d-rEa"/>
                                                 <constraint firstItem="H8n-om-jdv" firstAttribute="bottom" secondItem="lyC-W5-qhT" secondAttribute="bottom" id="scH-JP-tu8"/>
                                                 <constraint firstItem="vdq-Ss-alo" firstAttribute="top" secondItem="NpR-he-0L9" secondAttribute="bottom" constant="8" symbolic="YES" id="sdu-yg-IFO"/>
                                                 <constraint firstItem="H8n-om-jdv" firstAttribute="leading" secondItem="SPN-eI-IPU" secondAttribute="leadingMargin" constant="-10" id="snB-Ha-Xy5"/>
@@ -266,6 +275,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="cIr-eK-HsY" id="AEs-LY-2kM"/>
+                                            <outlet property="documentLabel" destination="mQT-go-dk0" id="H5o-nY-WwJ"/>
                                             <outlet property="imageVieww" destination="vdq-Ss-alo" id="g1l-Em-0oI"/>
                                             <outlet property="likeLabel" destination="lyC-W5-qhT" id="Pue-ec-qxf"/>
                                             <outlet property="userEmailLabel" destination="NpR-he-0L9" id="vRY-DK-QBH"/>
